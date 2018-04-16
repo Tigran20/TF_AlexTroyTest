@@ -6,6 +6,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class Rates {
 
+    public Rates(Integer eUR) {
+        this.eUR = eUR;
+    }
+
+    public Rates(Float rUB, Float aUD) {
+        this.rUB = rUB;
+        this.aUD = aUD;
+    }
+
+
+
     @SerializedName("AED")
     @Expose
     private Float aED;

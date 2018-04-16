@@ -70,8 +70,9 @@ public class Currency {
                 '}';
     }
 
-    public Currency(String base, String date) {
+    public Currency(String base, String date, Rates rates) {
         this.base = base;
         this.date = date;
+        this.rates = rates;
     }
 }

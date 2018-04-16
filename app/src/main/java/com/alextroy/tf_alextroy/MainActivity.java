@@ -7,10 +7,6 @@ import android.widget.Toast;
 
 import com.alextroy.tf_alextroy.api.App;
 import com.alextroy.tf_alextroy.model.Currency;
-import com.alextroy.tf_alextroy.model.Rates;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,9 +38,13 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Currency> call, Response<Currency> response) {
                 baseCurrency.setText(response.body().getBase());
 
-//                String text = "Курс валюты к Евро: ";
-//                dateCurrency.setText(text + response.body().getRates().getEUR().toString());
-//
+                String rub = "Курс RUB к EUR: ";
+                String aud = "Курс AUD к EUR: ";
+
+                dateCurrency.setText(
+                        rub + response.body().getRates().getRUB() + "\n" +
+                                aud + response.body().getRates().getAUD());
+
                 String date = "Текущая дата: ";
                 dateRate.setText(date + response.body().getDate());
 
